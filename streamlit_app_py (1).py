@@ -944,9 +944,7 @@ st.bar_chart(compare_df)
 st.markdown("---")
 st.caption("Built using Streamlit • Dataset: Custom Nutrition Data • Clustering: Fuzzy C-Means")
 
-# Install dependencies
-!pip install streamlit
-!npm install -g localtunnel
+
 
 # Write your app to a file
 with open("streamlit_app.py", "w") as f:
