@@ -222,23 +222,6 @@ list_of_columns = ['fibre_g','protein_g','freesugar_g','carb_g','Health_Label']
 df_with_food_names.columns
 
 
-cols_for_plot = [col for col in list_of_columns if df_with_food_names[col].dtype != 'object']
-cols_for_plot += ['Health_Label']
-
-# Pairplot to visualize relationships between variables and clusters
-plt.figure(figsize=(3, 3))
-sns.pairplot(df_with_food_names[list_of_columns], hue='Health_Label', diag_kind='kde', palette='coolwarm',plot_kws={'alpha':0.7, 's':60})
-plt.suptitle("Pairplot of Features with Fuzzy C-Means Clusters", y=1.02)
-plt.show()
-# 👇 Add 'Health_Label' temporarily for plotting
-sns.pairplot(df_with_food_names[list_of_columns + ['Health_Label']],
-             hue='Health_Label', diag_kind='kde',
-             palette='coolwarm', plot_kws={'alpha': 0.7, 's': 60})
-plt.suptitle("Pairplot of Features with Fuzzy C-Means Clusters", y=1.02)
-plt.show()
-
-df_with_food_names[list_of_columns].groupby('Health_Label').mean()
-
 """1 cluster is healthy"""
 
 df_pca.shape
