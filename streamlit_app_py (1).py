@@ -552,6 +552,8 @@ df_with_food_names.to_excel('Labeled_Data.xlsx',index = False)
 
 
 """Streamlit"""
+import streamlit as st
+
 with open("streamlit_app.py", "w") as f:
     f.write('''
 import streamlit as st
