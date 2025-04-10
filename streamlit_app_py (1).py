@@ -221,7 +221,13 @@ list_of_columns = ['fibre_g','protein_g','freesugar_g','carb_g','Health_Label']
 
 df_with_food_names.columns
 
-df_with_food_names['Health_Label'] = df_with_food_names['Health_Label'].apply(lambda x: x[0] if isinstance(x, (list, np.ndarray)) else x)
+if 'Health_Label' in df_with_food_names.columns:
+    df_with_food_names['Health_Label'] = df_with_food_names['Health_Label'].apply(
+        lambda x: x[0] if isinstance(x, (list, np.ndarray)) else x
+    )
+else:
+    st.warning("⚠️ 'Health_Label' column not found in the uploaded dataset.")
+
 
 cols_for_plot = [col for col in list_of_columns if df_with_food_names[col].dtype != 'object']
 cols_for_plot += ['Health_Label']
