@@ -186,7 +186,6 @@ from sklearn.decomposition import PCA
 pca = PCA(n_components=3)  # Reduce to 3 main components
 df_pca = pd.DataFrame(pca.fit_transform(df_selected_scaled_diabetes), columns=["PC1", "PC2", "PC3"])
 
-!pip install scikit-fuzzy
 
 import skfuzzy as fuzz
 import numpy as np
@@ -365,7 +364,6 @@ from sklearn.decomposition import PCA
 pca = PCA(n_components=3)  # Reduce to 3 main components
 df_pca = pd.DataFrame(pca.fit_transform(df_selected_scaled_obesity), columns=["PC1", "PC2", "PC3"])
 
-!pip install scikit-fuzzy
 
 import skfuzzy as fuzz
 import numpy as np
@@ -487,7 +485,6 @@ pca = PCA(n_components=3)  # Reduce to 3 main components
 df_pca1 = pd.DataFrame(pca.fit_transform(df_selected_scaled_high_bp), columns=["PC1", "PC2", "PC3"])
 df_pca2 = pd.DataFrame(pca.fit_transform(df_selected_scaled_low_bp), columns=["PC1", "PC2", "PC3"])
 
-!pip install scikit-fuzzy
 
 import skfuzzy as fuzz
 import numpy as np
