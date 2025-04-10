@@ -14,7 +14,7 @@ Original file is located at
 import pandas as pd
 import numpy as np
 
-file_path = '/content/DataCleaned.csv'
+file_path = 'DataCleaned.csv'
 
 # Read the CSV file
 df = pd.read_csv(file_path)
