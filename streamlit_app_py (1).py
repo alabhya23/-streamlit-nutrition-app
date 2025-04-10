@@ -547,34 +547,11 @@ df_with_food_names.to_excel('Labeled_Data.xlsx',index = False)
 
 """Streamlit"""
 
-!pip install streamlit pandas seaborn matplotlib
-
-# Install dependencies
-!pip install streamlit pyngrok
 
 # Write the app to a file (if not already saved)
 with open("streamlit_app.py", "w") as f:f.write("/content/streamlit_app.py")  # or upload the .py file
 
-# Launch Streamlit app with tunnel
-from pyngrok import ngrok
-import threading
 
-def run():
-    !streamlit run streamlit_app.py --server.port 8501
-
-# Start Streamlit in background
-threading.Thread(target=run).start()
-
-from pyngrok import conf
-
-conf.get_default().auth_token = "2vSRWWnetYJ5JS8vp3h832zlzKK_5zg2zJ5yzKXGRNUG8SE4Q"
-
-
-# Open ngrok tunnel (with optional auth)
-print("Streamlit is live at:", public_url)
-
-# Install dependencies
-!pip install streamlit pyngrok
 
 # Write the app to a file (if not already saved)
 with open("streamlit_app.py", "w") as f:
@@ -676,22 +653,6 @@ st.markdown("---")
 st.caption("Built using Streamlit • Custom Data • Fuzzy C-Means Clustering")
 ''')
 
-# Launch Streamlit app with tunnel
-from pyngrok import ngrok
-import threading
-
-def run():
-    !streamlit run streamlit_app.py --server.port 8501
-
-# Start Streamlit in background
-threading.Thread(target=run).start()
-
-from pyngrok import conf
-conf.get_default().auth_token = "2vSRWWnetYJ5JS8vp3h832zlzKK_5zg2zJ5yzKXGRNUG8SE4Q"
-
-# Open ngrok tunnel
-public_url = ngrok.connect(8501)
-print("Streamlit is live at:", public_url)
 
 with open("streamlit_app.py", "w") as f:
     f.write('''
@@ -759,17 +720,7 @@ if condition:
 st.markdown("---")
 st.caption("Built using Streamlit • Personalized food guidance")
 ''')
-# Launch Streamlit app in background
-import threading
-def run():
-    !streamlit run streamlit_app.py --server.port 8501
-threading.Thread(target=run).start()
 
-# Start tunnel
-from pyngrok import conf, ngrok
-conf.get_default().auth_token = "your-ngrok-token"
-public_url = ngrok.connect(8501)
-print("✅ Streamlit app is live at:", public_url)
 
 with open("streamlit_app.py", "w") as f:
     f.write('''
@@ -866,22 +817,6 @@ st.markdown("---")
 st.caption("Built using Streamlit • Personalized food guidance with tips 💡")
 ''')
 
-# Launch Streamlit app with tunnel
-from pyngrok import ngrok
-import threading
-
-def run():
-    !streamlit run streamlit_app.py --server.port 8501
-
-# Start Streamlit in background
-threading.Thread(target=run).start()
-
-from pyngrok import conf
-conf.get_default().auth_token = "2vSRWWnetYJ5JS8vp3h832zlzKK_5zg2zJ5yzKXGRNUG8SE4Q"
-
-# Open ngrok tunnel
-public_url = ngrok.connect(8501)
-print("Streamlit is live at:", public_url)
 
 
 
@@ -1112,18 +1047,3 @@ st.bar_chart(compare_df)
 st.markdown("---")
 st.caption("Built using Streamlit • Custom Data • Fuzzy C-Means Clustering")
 ''')
-
-# Start Streamlit in background
-import threading
-
-def run():
-    !streamlit run streamlit_app.py --server.port 8501 --server.enableCORS false
-
-threading.Thread(target=run).start()
-
-# Wait for server to start
-import time
-time.sleep(5)
-
-# Start localtunnel and get the public URL
-!npx localtunnel --port 8501 --subdomain alabhya
